@@ -1,44 +1,46 @@
 import React, { useEffect } from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View, ActivityIndicator, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import Carousel from '@/ui/components/Carousel'
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchCategories } from '../../home/state/categories/categoryThunks';
- 
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchCategories } from '@/features/home/state/categories/categoryThunks'
+import type { RootState, CarouselItem } from '@/features/home/types/category.types'
+import type { SlidersRootState, SliderBanner, SliderItem } from '@/features/home/types/slider.types'
+import { fetchSliders } from '../state/sliders/sliderThunks'
+import type { AppDispatch } from '@/store' 
+import Slider from '../components/Slider'
 
 export default function HomeScreen() {
-  const dispatch = useDispatch();
-  const { data, loading } = useSelector((state: any) => state.categories);
+  const dispatch = useDispatch<AppDispatch>()
+  const { data, loading } = useSelector((state: RootState) => state.categories)
+  const { data: sliderData, loading: sliderLoading, error: sliderError } = useSelector((state: SlidersRootState) => state.sliders)
 
   useEffect(() => {
-    dispatch(fetchCategories());
-  }, [dispatch]);
+    dispatch(fetchCategories())
+    dispatch(fetchSliders())
+  }, [dispatch])
 
-
-  const carouselData = data?.data?.map((item: any) => ({
+  const carouselData: CarouselItem[] | undefined = data?.data?.map((item: any) => ({
     image: { uri: item.banner },
-  }));
-  console.log("carouselData", carouselData)
+  }))
 
+  const sliderCarouselItems: SliderItem[] | undefined = sliderData?.data?.map((item: SliderBanner) => ({
+    image: { uri: item.photo },
+  })) ?? []
+
+  if (loading) {
+    return (
+      <SafeAreaView className='flex-1 bg-appbg'>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      </SafeAreaView>
+    )
+  }
   return (
     <SafeAreaView className='flex-1 bg-appbg'>
       <View>
-        <Image
-          source={{
-            uri: "https://dazlea.com/public/uploads/all/lMLrlNFshOcmiWLPsVb4O4Uryp09XCBZOzybVNpU.webp",
-          }}
-          style={{ width: 300, height: 200 }}
-        />
-        <Carousel
-          data={[
-            { image: require('@/assets/images/onboardingImage.png') },
-            { image: require('@/assets/images/onboardingImage.png') },
-            {
-              image: {
-                uri: "https://dazlea.com/public/uploads/all/lMLrlNFshOcmiWLPsVb4O4Uryp09XCBZOzybVNpU.webp"
-              }
-            }
-          ]}
+        <Slider
+          data={ sliderCarouselItems }
           autoPlay
           loop
         />
@@ -47,4 +49,15 @@ export default function HomeScreen() {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+})

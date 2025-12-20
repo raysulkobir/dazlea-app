@@ -50,7 +50,7 @@ type CarouselProps = {
     renderItem?: (item: CarouselItem, index: number, active: boolean) => React.ReactNode;
 };
 
-const Carousel = forwardRef<CarouselRef, CarouselProps>(({
+const Slider = forwardRef<CarouselRef, CarouselProps>(({
     data = [],
     autoScrollInterval = 3000,
     autoPlay,
@@ -190,8 +190,7 @@ const styles = StyleSheet.create({
     },
     image: { 
         width: '100%',
-        borderRadius: 20,
-        overflow: 'hidden',
+        height: 150,
     },
     textBox: { 
         alignItems: 'center' 
@@ -221,4 +220,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default memo(Carousel);
+export default memo(Slider);

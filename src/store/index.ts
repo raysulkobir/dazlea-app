@@ -2,16 +2,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { authApi } from '../features/auth/api/authApi';
 import authReducer from '../features/auth/state/authSlice';
-import counterReducer from '../features/home/state/counterSlice';
-import categoryReducer  from '../features/home/state/categories/categorySlice'
+import categoryReducer  from '@/features/home/state/categories/categorySlice'
+import sliderReducer from '@/features/home/state/sliders/sliderSlice'
 // ✅ fixed import
 
 export const store = configureStore({
   reducer: {
     [authApi.reducerPath]: authApi.reducer,
     auth: authReducer,
-    counter: counterReducer,
     categories: categoryReducer,
+    sliders: sliderReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
