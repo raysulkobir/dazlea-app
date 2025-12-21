@@ -4,6 +4,7 @@ import { authApi } from '../features/auth/api/authApi';
 import authReducer from '../features/auth/state/authSlice';
 import categoryReducer  from '@/features/home/state/categories/categorySlice'
 import sliderReducer from '@/features/home/state/sliders/sliderSlice'
+import bannerReducer from '@/features/home/state/banners/bannerSlice'
 // ✅ fixed import
 
 export const store = configureStore({
@@ -11,7 +12,8 @@ export const store = configureStore({
     [authApi.reducerPath]: authApi.reducer,
     auth: authReducer,
     categories: categoryReducer,
-    sliders: sliderReducer
+    sliders: sliderReducer,
+    banners: bannerReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()

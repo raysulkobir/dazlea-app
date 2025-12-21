@@ -12,6 +12,7 @@ import Slider from '../components/Slider'
 import BannerSkeleton from '@/features/home/skeleton/BannerSkeleton'
 import Header from '../components/Header'
 import OfferMenu from '../components/OfferMenu'
+import Banner from '../components/Banner'
 
 const HomeScreen: React.FC = () => {
 
@@ -39,6 +40,8 @@ const HomeScreen: React.FC = () => {
       </SafeAreaView>
     )
   }
+
+
   return (
     <SafeAreaView className="flex-1 bg-appbg">
       {/* Header */}
@@ -49,6 +52,8 @@ const HomeScreen: React.FC = () => {
 
       {/* Offer Menu */}
       <OfferMenu/>
+      {/* Banner */}
+      <Banner/>
     </SafeAreaView>
   )
 }
