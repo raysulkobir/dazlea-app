@@ -15,22 +15,30 @@ module.exports = {
       colors: {
         appbg: "#F8FAFB",
         primary: {
-          DEFAULT: "#007E85", // main brand color
-          50: "#E0F7F8",
-          100: "#B3ECEE",
-          200: "#80E1E4",
-          300: "#4DD6D9",
-          400: "#26CBD0",
-          500: "#00BFC6",
-          600: "#009AA0",
-          700: "#007E85",
-          800: "#005E63",
-          900: "#003F42",
+          DEFAULT: "#F85402", // base
+          50: "#FFF4ED",
+          100: "#FFE6D5",
+          200: "#FFC9A8",
+          300: "#FFAB7A",
+          400: "#FF8C4D",
+          500: "#F85402", // base
+          600: "#E14A00", // hover / pressed
+          700: "#C63F00",
+          800: "#A33300",
+          900: "#7A2600",
         },
 
         secondary: {
           DEFAULT: "#9333ea",
-        },
+          50: "#F5E1FF",
+          100: "#E6B3FF",
+          200: "#D685FF",
+          300: "#C857FF",
+          400: "#B92AFF",
+          500: "#9333EA",
+          600: "#7A2CCC",
+          700: "#fff",
+        },  
         danger: "#ef4444",
         success: "#22c55e",
         warning: "#facc15",

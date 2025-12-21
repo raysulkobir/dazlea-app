@@ -10,8 +10,10 @@ import { fetchSliders } from '../state/sliders/sliderThunks'
 import type { AppDispatch } from '@/store' 
 import Slider from '../components/Slider'
 import BannerSkeleton from '@/features/home/skeleton/BannerSkeleton'
+import Header from '../components/Header'
+import OfferMenu from '../components/OfferMenu'
 
-export default function HomeScreen() {
+const HomeScreen: React.FC = () => {
 
   const dispatch = useDispatch<AppDispatch>()
   const { data, loading } = useSelector((state: RootState) => state.categories)
@@ -38,16 +40,20 @@ export default function HomeScreen() {
     )
   }
   return (
-    <SafeAreaView className='flex-1 bg-appbg'>
-      <View>
-        
-        {/* slider section start  */}
-        <Slider data={ sliderCarouselItems } autoPlay loop />
-        {/* slider section end  */}
-      </View>
+    <SafeAreaView className="flex-1 bg-appbg">
+      {/* Header */}
+      <Header />
+
+      {/* Home Slider */}
+      <Slider data={sliderCarouselItems} autoPlay loop />
+
+      {/* Offer Menu */}
+      <OfferMenu/>
     </SafeAreaView>
   )
 }
+
+export default HomeScreen
 
 const styles = StyleSheet.create({
   loadingContainer: {

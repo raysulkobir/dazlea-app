@@ -8,6 +8,7 @@ import RegisterScreen from '@/features/singUp/screens/RegisterScreen';
 import VerifyPhoneNumberScreen from '@/features/verifyPhoneNumber/screens/VerifyPhoneNumberScreen';
 import OtpVerificationScreen from '@/features/otpVerification/screens/OtpVerificationScreen';
 import CreatePasswordScreen from '@/features/CreateANewPassword/screens/CreatePasswordScreen';
+import SearchFilterScreens from '@/features/searchFilter/screens/SearchFilterScreens';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ export default function RootNavigator() {
         >
             <Stack.Screen name="InitialScreen" component={InitialScreen} />
             <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="SearchFilter" component={SearchFilterScreens} />
             {/* <Stack.Screen name="OnBoardingScreen" component={OnBoardingScreen} />
             <Stack.Screen name="RegisterScreen" component={RegisterScreen} /> */}
 
