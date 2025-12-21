@@ -18,7 +18,7 @@ const Banner = () => {
         <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            className="px-4"
+            className="mx-4"
             contentContainerStyle={{ paddingRight: 16 }}
         >
             {bannerData?.data?.map((item) => (
