@@ -35,7 +35,7 @@ const FeaturedCategories: React.FC = () => {
         <View className="mt-4">
             {/* Header */}
             <View className="px-4 flex-row items-center justify-between">
-                <Text className="text-2xl font-bold text-gray-900">Featured Categories</Text>
+                <Text className="text-2xl font-bold text-gray-900 mb-2">Featured Categories</Text>
                 <Pressable hitSlop={10}>
                     {({ pressed }) => (
                         <Text className={`text-sm ${pressed ? "text-primary-700" : "text-gray-500"}`}>
@@ -49,7 +49,6 @@ const FeaturedCategories: React.FC = () => {
               <ScrollView
                     horizontal
                     showsHorizontalScrollIndicator={false}
-                    className="mx-4"
                 >
                 {list.map((item, idx) => {
                     return (

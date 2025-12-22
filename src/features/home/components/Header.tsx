@@ -7,7 +7,7 @@ const Header: React.FC = () => {
     const navigator = useNavigation();
 
     return (
-        <View className="mx-4 my-2">
+        <View className="my-2">
             <Pressable onPress={()=> navigator.navigate("SearchFilter") }>
                 <View className="flex-row items-center rounded-full bg-[#f8f4f1] px-4 py-3 border border-primary shadow-sm">
                     <TextInput

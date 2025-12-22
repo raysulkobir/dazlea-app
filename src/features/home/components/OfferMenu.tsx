@@ -42,12 +42,10 @@ const OfferMenu: React.FC<OfferMenuProps> = ({ onChange }) => {
     };
 
     return (
-        <View className="mt-4">
+        <View className="mt-4 border-yellow-700" >
             <ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                className="mx-4"
-                contentContainerStyle={{ paddingRight: 16 }}
             >
                 <Item keyName="discount" label="Todays Deal" icon="pricetag" />
                 <Item keyName="popular" label="Flash Deal" icon="flame" />
