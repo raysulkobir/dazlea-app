@@ -1,39 +1,38 @@
 // src/store/categories/categorySlice.ts
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchSliders } from './sliderThunks';
-import type { SliderBanner } from '@/features/home/types/slider.types'
+import { fetchBestSellingProducts } from './fetchBestSellingProductsThunks';
 
-interface SliderState {
-  data: SliderBanner[];
+interface BestSellingState {
+  data: any[];
   loading: boolean;
   error: string | null;
 }
 
-const initialState: SliderState = {
+const initialState: BestSellingState = {
   data: [],
   loading: false,
   error: null,
 };
 
-const sliderSlice = createSlice({
-  name: 'sliders',
+const bestSellingProductsSlice = createSlice({
+  name: 'productsBestSelling',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchSliders.pending, (state) => {
+      .addCase(fetchBestSellingProducts.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(fetchSliders.fulfilled, (state, action) => {
+      .addCase(fetchBestSellingProducts.fulfilled, (state, action) => {
         state.loading = false;
         state.data = action.payload;
       })
-      .addCase(fetchSliders.rejected, (state, action) => {
+      .addCase(fetchBestSellingProducts.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });
   },
 });
 
-export default sliderSlice.reducer;
+export default bestSellingProductsSlice.reducer;

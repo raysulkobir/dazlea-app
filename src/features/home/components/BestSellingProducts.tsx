@@ -3,18 +3,18 @@ import { View, ScrollView, Text } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import type { ProductsRootState, Products } from '@/features/home/types/products.types'
 import type { AppDispatch } from '@/store'
-import { fetchFeaturedProducts } from '@/features/home/state/featuredProducts/featuredProductsThunks'
+import { fetchBestSellingProducts } from '@/features/home/state/bestSelling/fetchBestSellingProductsThunks'
 import ProductCard from '@/ui/components/ProductCard'
 
-const FeaturedProducts: React.FC = () => {
+const BestSellingProducts: React.FC = () => {
     // Hooks
     const dispatch = useDispatch<AppDispatch>()
     const { data, loading, error } = useSelector(
-        (state: ProductsRootState) => state.featuredProducts
+        (state: ProductsRootState) => state.bestSellingProducts
     )
     // Effects
     useEffect(() => {
-        dispatch(fetchFeaturedProducts())
+        dispatch(fetchBestSellingProducts())
     }, [dispatch])
 
     // States
@@ -41,7 +41,7 @@ const FeaturedProducts: React.FC = () => {
         <View className="mt-4">
             {/* Header */}
             <View className="flex-row items-center justify-between">
-                <Text className="text-xl font-bold text-gray-900 mb-2">Featured Products</Text>
+                <Text className="text-xl font-bold text-gray-900 mb-2">Best Selling Products</Text>
                 <Text className="text-primary-600 font-sans">See All</Text>
             </View>
             <ScrollView
@@ -70,4 +70,4 @@ const FeaturedProducts: React.FC = () => {
     )
 }
 
-export default FeaturedProducts
+export default BestSellingProducts

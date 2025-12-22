@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import { fetchBanners } from './bannerThunks';
 import type { HomeBanner } from '@/features/home/types/banner.types'
 
-interface CategoryState {
+interface BannerState {
   data: HomeBanner[];
   loading: boolean;
   error: string | null;
 }
 
-const initialState: CategoryState = {
+const initialState: BannerState = {
   data: [],
   loading: false,
   error: null,

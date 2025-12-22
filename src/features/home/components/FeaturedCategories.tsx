@@ -33,18 +33,11 @@ const FeaturedCategories: React.FC = () => {
 
     return (
         <View className="mt-4">
-            {/* Header */}
-            <View className="px-4 flex-row items-center justify-between">
-                <Text className="text-2xl font-bold text-gray-900 mb-2">Featured Categories</Text>
-                <Pressable hitSlop={10}>
-                    {({ pressed }) => (
-                        <Text className={`text-sm ${pressed ? "text-primary-700" : "text-gray-500"}`}>
-                            See all
-                        </Text>
-                    )}
-                </Pressable>
+             {/* Header */}
+            <View className="flex-row items-center justify-between">
+                <Text className="text-xl font-bold text-gray-900 mb-2">Featured Categories</Text>
+                <Text className="text-primary-600 font-sans">See All</Text>
             </View>
-
             {/* Horizontal list */}
               <ScrollView
                     horizontal

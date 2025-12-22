@@ -5,9 +5,9 @@ import { Ionicons } from '@expo/vector-icons'
 type ProductCardProps = {
     title: string
     image: string
-    price: number
-    oldPrice?: number
-    offerPercentage?: number
+    main_price: string
+    oldPrice?: string
+    offerPercentage?: string
     rating?: number
     reviews?: number
     inStock?: boolean
@@ -20,7 +20,7 @@ type ProductCardProps = {
 const ProductCard: React.FC<ProductCardProps> = ({
     title,
     image,
-    price,
+    main_price,
     offerPercentage,
     oldPrice,
     rating = 0,
@@ -34,12 +34,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
     return (
         <Pressable
             onPress={onPress}
-            className="w-[170px] rounded-md bg-white border border-gray-200 mr-4"
+            className="w-[180px] rounded-md bg-white border border-gray-200"
         >
             {/* Image */}
             <View className="overflow-hidden p-2 rounded-t-md bg-gray-100">
                 {offerPercentage && (
-                    <Text className="absolute top-2 left-2 z-10 bg-primary-600 px-2 py-1 rounded-md text-xs font-semibold text-white">-22%</Text>
+                    <Text className="absolute top-2 left-2 z-10 bg-primary-600 px-2 py-1 rounded-md text-xs font-semibold text-white">{offerPercentage}</Text>
                 )}
                 <Image
                     source={{ uri: image }}
@@ -81,7 +81,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         </Text>
                     )}
                     <Text className="text-base font-semibold text-primary">
-                        ৳{price}
+                        ৳{main_price}
                     </Text>
                 </View>
 

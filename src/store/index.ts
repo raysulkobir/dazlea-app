@@ -5,6 +5,8 @@ import authReducer from '../features/auth/state/authSlice';
 import categoryReducer  from '@/features/home/state/categories/categorySlice'
 import sliderReducer from '@/features/home/state/sliders/sliderSlice'
 import bannerReducer from '@/features/home/state/banners/bannerSlice'
+import featuredProductsRenderer from '@/features/home/state/featuredProducts/featuredProductsSlice'
+import bestSellingProductsReducer from '@/features/home/state/bestSelling/bestSellingProductsSlice'
 // ✅ fixed import
 
 export const store = configureStore({
@@ -14,6 +16,8 @@ export const store = configureStore({
     categories: categoryReducer,
     sliders: sliderReducer,
     banners: bannerReducer,
+    featuredProducts: featuredProductsRenderer,
+    bestSellingProducts: bestSellingProductsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()

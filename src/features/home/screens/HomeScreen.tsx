@@ -12,6 +12,7 @@ import Banner from '@/features/home/components/Banner'
 import FeaturedCategories from '@/features/home/components/FeaturedCategories'
 import { ScrollView } from 'react-native'
 import FeaturedProducts from '@/features/home/components/FeaturedProducts'
+import BestSellingProducts from '@/features/home/components/BestSellingProducts'
 
 const HomeScreen: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -53,8 +54,11 @@ const HomeScreen: React.FC = () => {
         {/* Featured Categories */}
         <FeaturedCategories />
 
-    
+
         <FeaturedProducts />
+
+        {/* BestSellingProducts  */}
+        <BestSellingProducts />
       </ScrollView>
     </SafeAreaView>
   )
