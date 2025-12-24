@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     return (
         <Pressable
             onPress={onPress}
-            className="w-[180px] rounded-md bg-white border border-gray-200"
+            className="w-[180px] rounded-md bg-white border border-gray-200 mr-4"
         >
             {/* Image */}
             <View className="overflow-hidden p-2 rounded-t-md bg-gray-100">

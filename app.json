@@ -4,28 +4,39 @@
     "slug": "btfMedTalk",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/approved.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/approved.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.raysul.btfMedTalk",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/approved.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.raysul.btfMedTalk"
     },
     "web": {
-      "favicon": "./assets/favicon.png",
+      "favicon": "./assets/approved.png",
       "bundler": "metro"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "51b050c5-139a-4b51-927b-62d4184700b0"
+      }
+    },
+    "owner": "raysul"
   }
 }
