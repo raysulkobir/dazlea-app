@@ -2,10 +2,15 @@ import { View, Text, Pressable, Image } from 'react-native'
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
 
+interface ProductPrice {
+    price: string;
+    main_price?: string;
+}
+
 type ProductCardProps = {
     title: string
-    image: string
-    main_price: string
+    image: string | null
+    main_price: ProductPrice
     oldPrice?: string
     offerPercentage?: string
     rating?: number

@@ -7,6 +7,7 @@ import sliderReducer from '@/features/home/state/sliders/sliderSlice'
 import bannerReducer from '@/features/home/state/banners/bannerSlice'
 import featuredProductsRenderer from '@/features/home/state/featuredProducts/featuredProductsSlice'
 import bestSellingProductsReducer from '@/features/home/state/bestSelling/bestSellingProductsSlice'
+import flashDealsReducer from '@/features/home/state/flashDeals/flashDealsSlice'
 // ✅ fixed import
 
 export const store = configureStore({
@@ -18,6 +19,7 @@ export const store = configureStore({
     banners: bannerReducer,
     featuredProducts: featuredProductsRenderer,
     bestSellingProducts: bestSellingProductsReducer,
+    flashDeals: flashDealsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()

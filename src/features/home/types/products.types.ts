@@ -1,7 +1,8 @@
 export interface Products {
   id: number
   name: string
-  thumbnail_image: string
+  thumbnail_image: string | null
+  image: string | null
   has_discount: boolean
   discount: string
   stroked_price: string
@@ -23,4 +24,5 @@ export interface ProductState {
 export interface ProductsRootState {
   featuredProducts: ProductState
   bestSellingProducts: ProductState
+  flashDeals: ProductState
 }
